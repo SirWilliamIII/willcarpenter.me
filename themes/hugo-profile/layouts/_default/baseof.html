@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   {{- partial "head.html" . -}}
@@ -7,7 +7,7 @@
 
   <!-- Custom Styles -->
   {{ if .Site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/style.css">
+    <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/header.css">
   {{ end }}
 
   <title>
@@ -15,7 +15,7 @@
   </title>
 </head>
 
-<body class="light">
+<body class="dark">
   <!-- javascripts -->
   <!-- <script src="/js/jquery-3.6.0.min.js"></script> -->
 

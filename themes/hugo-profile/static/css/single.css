@@ -22,7 +22,7 @@
     border-radius: 1rem;
     box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
     margin-bottom: 1rem;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color-dark);
 }
 
 #single .page-content img {
@@ -97,7 +97,7 @@
 #single .page-content table > tbody > tr > td {
     padding: 0.5rem !important;
     border: 1px solid var(--secondary-color);
-    background-color: var(--secondary-color) !important;
+    background-color: var(--background-color) !important;
     opacity: 0.9;
 }
 
@@ -110,9 +110,8 @@
 
 #single .page-content pre {
   border-radius: 0.7em !important;
-  margin: 5px;
-  margin-bottom: 2em;
-  padding: 2em;
+    margin: 5px 5px 2em;
+    padding: 2em;
   background-color: var(--secondary-color) !important;
   color: var(--text-secondary-color) !important;
   max-height: 450px;
@@ -129,8 +128,8 @@
 /* kbd and mark */
 
 #single .page-content kbd {
-  color: var(--primary-color) !important;
-  background-color: var(--secondary-color) !important;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 #single .page-content mark {
@@ -188,7 +187,7 @@
     border-radius: 10px;
     background-color: var(--background-color);
     text-decoration: none;
-    color: var(--text-link-color) !important;
+    color: var(--text-link-color);
 }
 
 #single aside.tags ul.tags-ul li {

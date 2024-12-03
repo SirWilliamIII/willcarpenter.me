@@ -56,12 +56,12 @@ params:
   title: "Will Carpenter Profile Site"
   description: Look at my cool website
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
+  favicon: /favicon.svg
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
   # Note the lack of "" in true, it should be of boolean type.
-  useBootstrapCDN: true
+  useBootstrapCDN: false
 
   # If you want to load dynamically responsive images from Cloudinary
   # This requires your images to be uploaded + hosted on Cloudinary
@@ -75,8 +75,8 @@ params:
   animate: true
 
   theme:
-    # disableThemeToggle: true
-    # defaultTheme: "light" # dark
+    disableThemeToggle: false
+    defaultTheme: dark # dark
 
   font:
     fontSize: 1rem # default: 1rem
@@ -86,41 +86,41 @@ params:
 
   # color preference
   # When using hex codes for colors, quotations must be used along with the # sign
-  # color:
-  #   textColor: "#343a40"
-  #   secondaryTextColor: "#6c757d"
-  #   textLinkColor: "#007bff"
-  #   backgroundColor: "#eaedf0"
-  #   secondaryBackgroundColor: "#64ffda1a"
-  #   primaryColor: "#007bff"
-  #   secondaryColor: "#f8f9fa"
+  color:
+     textColor: "#00FF00"
+     secondaryTextColor: "#EA4335"
+     textLinkColor: "#3700B3"
+     backgroundColor: "#333333"
+     secondaryBackgroundColor: "#64ffda1a"
+     primaryColor: "#FF0000"
+     secondaryColor: "#34A852"
 
-  #   darkmode:
-  #     textColor: "#e4e6eb"
-  #     secondaryTextColor: "#b0b3b8"
-  #     textLinkColor: "#ffffff"
-  #     backgroundColor: "#18191a"
-  #     secondaryBackgroundColor: "#212529"
-  #     primaryColor: "#ffffff"
-  #     secondaryColor: "#212529"
+     darkmode:
+       textColor: "#FF0000"
+       secondaryTextColor: "#b0b3b8"
+       textLinkColor: "#ff0000"
+       backgroundColor: "#333333"
+       secondaryBackgroundColor: "#333333"
+       primaryColor: "#ff00ff"
+       secondaryColor: "#212529"
 
   # If you want to customize the menu, you can change it here
   navbar:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
-    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
-    showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandLogo: /favicon.svg # Logo for the brand | default is the favicon variable
+    showBrandLogo: true # Show brand logo in nav bar | default is true
     brandName: WTC # Brand name for the brand | default is the title variable
     disableSearch: true
     # searchPlaceholder: "Search"
     stickyNavBar:
       enable : true
       showOnScrollUp : true
-    enableSeparator: false
+    enableSeparator: true
     menus:
       disableAbout: false
       disableExperience: false
       disableEducation: true
-      disableProjects: true
+      disableProjects: false
       disableAchievements: true
       disableContact: false
 
@@ -129,18 +129,19 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Will."
-    subtitle: "I build things for the web"
-    content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly."
-    image: /headshot.png
+    subtitle: "I help businesses leverage technology to drive growth."
+    content: "My career has been a dynamic journey, evolving from web development to customer-centric roles where I've found my true passion. Allow me to share the highlights of this professional path."
+    image: /kela.jpg
     bottomImage:
       enable: true
-    # roundImage: true # Make hero image circular | default false
+#    roundImage: true # Make hero image circular | default false
     button:
       enable: true
       name: "Resume"
       url: /resume.pdf
       download: false
       newPage: true
+      border: true
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-github
@@ -153,21 +154,57 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: /headshot.png
+    image: /headshot.jpg
     content: |-
-      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA.
+      My foundation was built in web development, where I honed my skills in both front-end
+      and back-end technologies. I became proficient in crafting intuitive user interfaces using HTML,
+      CSS, and JavaScript, while also
+      developing robust server-side applications with Node.js and Express. My expertise extends to
+      database management, including MongoDB and SQL, as well as cloud services such as AWS, Google Cloud
+      Platform, and Cloudflare.
 
-      I am currently working on a project that will be used to help people find the best way to get around the city.
+
+
+      This technical background provided me with a comprehensive understanding of data flow,
+      system architecture, and the critical importance of delivering seamless user experiences. However,
+      the most transformative step
+      in my career came when I transitioned into customer-facing technical roles, spanning both pre-sales
+      and post-sales environments.
+
+
+
+
+      In these positions, I've had the privilege of serving some of the world's largest
+      companies across various sectors, including retail, travel, and finance. My involvement spans the
+      entire customer life-cycle, from initial
+      proof of concept and on-boarding to driving adoption and nurturing customers into brand ambassadors.
+
+
+
+
+      My key strength lies in translating complex technical concepts into actionable
+      insights, empowering clients to make informed, data-driven decisions that optimize their operations.
+      I take pride in being a strong advocate
+      for the customer, consistently building and maintaining lasting relationships.
+
+
+
+
+      This journey has reinforced my belief that technology is not just about innovative
+      solutions, but about how these solutions can be leveraged to achieve tangible business goals. It's
+      this intersection of technology
+      and business impact that continues to drive my professional passion.
+
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
       items:
-        - "HTML"
-        - "CSS"
-        - "JavaScript"
-        - "React"
-        - "Node"
-        - "Express"
+        - "JavaScript, NodeJS"
+        - "Python Numpy, Pandas, Seaborn"
+        - "SQL"
+        - "NLP with spaCy"
+        - "Amazon Web Services, Google Cloud Platform"
+        - "Docker, Kubernetes"
 
   # Experience
   experience:
@@ -235,153 +272,112 @@ params:
         content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
 
   # Education
-#  education:
-#    enable: true
-#    # title: "Custom Name"
-#    index: false
-#    items:
-#      - title: "Master of Business Administration"
-#        school:
-#          name: "University of California, Berkeley"
-#          url: "https://example.org"
-#        date: "2013 - 2015"
-#        GPA: "3.8 out of 5.0"
-#        content: |-
-#          Extracurricular Activities
-#            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-#            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-#      - title: "Bachelor of Science in Computer Science"
-#        school:
-#          name: "Massachusetts Institute of Technology"
-#          url: "https://example.org"
-#        date: "2009 - 2013"
-#        GPA: "3.9 out of 5.0"
-#        content: |-
-#          I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-#          - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-#          - Face mask detection using a single convolutional neural network.
-#
-#          Extracurricular Activities
-#            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-#            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-#        featuredLink:
-#          enable: true
-#          name: "My academic record"
-#          url: "https://example.com"
-#      - title: "High School"
-#        school:
-#          name: "Thomas Jefferson High School for Science and Technology."
-#          url: "https://example.org"
-#        GPA: "4.2 out of 5.0"
-#        featuredLink:
-#          enable: true
-#          url: "https://example.com"
-#
-#  # Achievements
-#  achievements:
-#    enable: true
-#    # title: "Custom Name"
-#    items:
-#      - title: Google kickstart runner
-#        content: I solved all problems with optimal solution.
-#        url: https://example.com
-#        image: /images/achievment.jpg
-#      - title: Facebook Hackathon Winner
-#        content: Developed a product using Artificial Intelligence.
-#        image: /images/achievment.jpg
-#      - title: Hugo Profile
-#        content: Developed a theme and getting 1K+ downloads per month.
-#        url: "https://github.com/gurusabarish/hugo-profile"
-#        image: /images/achievment.jpg
-#      - title: Microsoft Imagine Runner
-#        content: We are developed a product which can help others.
-#      - title: Google Summer of Code
-#        content: Contributed to a open source project.
-#        url: https://example.com
-#
-#  # projects
-#  projects:
-#    enable: true
-#    # title: "Custom Name"
-#    items:
-#      - title: Hugo Profile
-#        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
-#        image: /images/projects/profile.png
-#        featured:
-#          name: Demo
-#          link: https://hugo-profile.netlify.app
-#        badges:
-#          - "Hugo"
-#          - "Bootstrap"
-#          - "Javascript"
-#        links:
-#          - icon: fa fa-envelope
-#            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
-#          - icon: fab fa-github
-#            url: https://github.com/gurusabarish/hugo-profile
-#          - icon: fab fa-twitter
-#            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
-#
-#      - title: Image Converter
-#        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-#        image: /images/projects/converter.jpg
-#        featured:
-#          name: Demo
-#          link: https://django-converter.herokuapp.com
-#        badges:
-#          - "Django"
-#          - "Bootstrap"
-#        links:
-#          - icon: fab fa-github
-#            url: https://github.com/gurusabarish/converter
-#
-#      - title: Hugo Profile V2
-#        content: A clean and simple Hugo template for personal portfolio and blog.
-#        image: /images/projects/profile2.jpg
-#        featured:
-#          name: Demo V2
-#          link: https://hugo-profile-2.netlify.app
-#        badges:
-#          - "Hugo"
-#          - "Bootstrap"
-#          - "Javascript"
-#        links:
-#          - icon: fab fa-github
-#            url: https://github.com/gurusabarish/HugoProfileV2
+  education:
+    enable: true
+    title: "Custom Name"
+    index: false
+    items:
+      - title: "Master of Business Administration"
+        school:
+          name: "University of California, Berkeley"
+          url: "https://example.org"
+        date: "2013 - 2015"
+        GPA: "3.8 out of 5.0"
+        content: |-
+          Extracurricular Activities
+            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+      - title: "Bachelor of Science in Computer Science"
+        school:
+          name: "Massachusetts Institute of Technology"
+          url: "https://example.org"
+        date: "2009 - 2013"
+        GPA: "3.9 out of 5.0"
+        content: |-
+          I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
+          - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
+          - Face mask detection using a single convolutional neural network.
+
+          Extracurricular Activities
+            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        featuredLink:
+          enable: true
+          name: "My academic record"
+          url: "https://example.com"
+      - title: "High School"
+        school:
+          name: "Thomas Jefferson High School for Science and Technology."
+          url: "https://example.org"
+        GPA: "4.2 out of 5.0"
+        featuredLink:
+          enable: true
+          url: "https://example.com"
+
+
+  # projects
+  projects:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: Hugo Profile
+        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
+        image: /images/projects/profile.png
+        featured:
+          name: Demo
+          link: https://hugo-profile.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fa fa-envelope
+            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/hugo-profile
+          - icon: fab fa-twitter
+            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+
+      - title: Image Converter
+        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
+        image: /images/projects/converter.jpg
+        featured:
+          name: Demo
+          link: https://django-converter.herokuapp.com
+        badges:
+          - "Django"
+          - "Bootstrap"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/converter
+
+      - title: Hugo Profile V2
+        content: A clean and simple Hugo template for personal portfolio and blog.
+        image: /images/projects/profile2.jpg
+        featured:
+          name: Demo V2
+          link: https://hugo-profile-2.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/HugoProfileV2
 
   #Contact
   contact:
     enable: true
-    # title: "Custom Name"
+    title: "Custom Name"
     content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
     btnName: Mail me
     btnLink: mailto:will@willcarpenter.me
-    # formspree:
-    #   enable: true # `contact.email` value will be ignored
-    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
-    #   emailCaption: "Enter your email address"
-    #   messageCaption: "Enter your message here"
-    #   messageRows: 5
-
-  footer:
-    enable: true
 
 
 
   # List pages like blogs and posts
   listPages:
     disableFeaturedImage: false
-
-  # Single pages like blog and post
-  singlePages:
-    socialShare: true
-    readTime:
-      enable: true
-      content: "min read"
-    scrollprogress:
-      enable: true
-    tags:
-      openInNewTab: true
 
   # For translations
   terms:

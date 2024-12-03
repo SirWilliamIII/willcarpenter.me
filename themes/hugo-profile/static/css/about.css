@@ -6,7 +6,7 @@
 
 #single .title>h1 {
     opacity: 0.8;
-    color: var(--text-color) !important;
+    color: var(--text-color-dark) !important;
 }
 
 #single .title small {
@@ -27,7 +27,7 @@
 #single .page-content a {
     display: inline-block;
     text-decoration: none;
-    color: var(--text-link-color) !important;
+    color-dark: var(--text-link-color-dark) !important;
 }
 
 #single .page-content a::after {
@@ -36,7 +36,7 @@
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-dark);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     opacity: 0.5;
 }

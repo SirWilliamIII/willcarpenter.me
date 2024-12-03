@@ -1,58 +1,59 @@
 {{- if (eq .Site.Params.theme.defaultTheme "light") }}
 <script>
-    if (document.body.className.includes("dark")) {
-        document.body.classList.remove('dark');
-        localStorage.setItem("pref-theme", 'light');
-    }
-</script>
-
-{{ else if (eq .Site.Params.theme.defaultTheme "dark") }}
-{{- /* theme is dark */}}
-<script>
-    if (document.body.className.includes("light")) {
-        document.body.classList.add('dark');
+    if (document.body.classList.contains("dark")) {
+        document.body.classList.remove('light');
         localStorage.setItem("pref-theme", 'dark');
     }
 </script>
 
-{{- else }}
-{{- /* theme is auto */}}
+{{ else if (eq .Site.Params.theme.defaultTheme "dark") }}
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
+    if (!document.body.classList.contains("dark")) {
         document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'light');
     }
+</script>
 
+{{- else }}
+<script>
+    const prefTheme = localStorage.getItem("pref-theme");
+    if (prefTheme === "dark" || (!prefTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
 </script>
 {{- end }}
 
 {{- if (not .Site.Params.theme.disableThemeToggle) }}
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
+        if (document.body.classList.contains("dark")) {
             document.body.classList.remove('dark');
             localStorage.setItem("pref-theme", 'light');
         } else {
             document.body.classList.add('dark');
             localStorage.setItem("pref-theme", 'dark');
         }
-    })
+    });
 
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            if (!bootstrap.Tooltip.getInstance(tooltipTriggerEl)) {
+                return new bootstrap.Tooltip(tooltipTriggerEl, {
+                    placement: 'top',
+                    trigger: 'hover'
+                });
+            }
+        });
+    });
 </script>
 {{- end }}
 
 {{ if not (.Site.Params.navbar.disableSearch | default false) }}
-    <script src="{{ .Site.Params.staticPath }}/js/search.js"></script>
+<script src="{{ .Site.Params.staticPath }}/js/search.js"></script>
 {{ end }}
-
 
 {{ if or (.Params.mathjax | default false) (.Site.Params.mathjax) }}
 
@@ -79,7 +80,7 @@
 {{ "<!-- cloudinary -->" | safeHTML }}
 <script src="https://unpkg.com/cloudinary-core@2.13.0/cloudinary-core-shrinkwrap.js" integrity="sha384-0bQduxVhZMs6xfvcPH9osdUIw44hjF8EahHuQBdyN6Rryk8tgyFO80Yz5d14F+5d" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    var cl = cloudinary.Cloudinary.new({cloud_name: "{{- .Site.Params.cloudinary_cloud_name }}"}); 
+    var cl = cloudinary.Cloudinary.new({cloud_name: "{{- .Site.Params.cloudinary_cloud_name }}"});
     cl.responsive();
 </script>
 
