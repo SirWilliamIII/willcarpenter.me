@@ -74,7 +74,13 @@ header .navbar.animate {
     min-height: 100vh;
     line-height: 2rem;
     max-width: 100%;
+    
 }
+
+#hero-row {
+    margin-top: 10em;
+}
+
 #hero .content.animate {
     animation: fade-left 1s ease-out;
 }
@@ -82,7 +88,7 @@ header .navbar.animate {
 #hero .hero-bottom-svg {
     opacity: 0.5;
     position: absolute;
-    bottom: -50px;
+    bottom: 50px;
     left: -150px;
 }
 
@@ -154,17 +160,21 @@ header .navbar.animate {
     border: 1px solid var(--primary-color);
     color: var(--text-color) !important;
     border-radius: .75rem;
-    transition: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    cursor: pointer;
 }
 
 #hero a.btn:focus {
     box-shadow: none;
+        transform: scale(0.98)
 }
 
 #hero a.btn:hover {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-color) !important;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     opacity: 0.9;
+    transform: scale(1.05);
 }
 
 #hero a.btn.social-icon:hover {
@@ -173,6 +183,7 @@ header .navbar.animate {
 }
 
 #hero .hero-content > a {
+    
     display: inline-block;
     text-decoration: none;
     color: var(--text-link-color) !important;
@@ -194,16 +205,15 @@ header .navbar.animate {
 }
 
 
-
 /* about me */
 #about h3 {
-    color: var(--text-secondary-color) !important;
+    color: var(--text-secondary-color);
 }
 
 #about .image img {
     box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
     transition: box-shadow 0.3s;
-    padding: 0;
+    padding: 2em;
     border: 0;
 }
 
@@ -236,8 +246,8 @@ header .navbar.animate {
 
 #about .content {
     font-weight: 500;
-    opacity: 0.9 !important;
-    line-height: 1.7rem !important;
+    opacity: 0.9;
+    line-height: 1.85rem;
 }
 
 #about a {
@@ -577,3 +587,13 @@ header .navbar.animate {
     box-shadow: 0px 8px 56px rgb(15 80 100 / 5%);
     padding: .5rem 1rem;
 }
+
+
+@media (min-width: 768px) {
+    #hero {
+        padding-top: 0;
+    }
+    #hero-row {
+        padding-top: 0;
+    }
+  }
