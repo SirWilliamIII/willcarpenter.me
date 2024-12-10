@@ -54,7 +54,7 @@
 #single .page-content h5,
 #single .page-content h6 {
     color: var(--primary-color) !important;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.3em;
     opacity: 0.9;
 }
 

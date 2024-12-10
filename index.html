@@ -176,7 +176,7 @@
     <section id="hero" class="pt-1 align-middle">
         <div class="container px-3 px-sm-5 pt-md-5 pt-lg-5 pt-lg-3">
             <div class="row" id="hero-row">
-                <div class="col-sm-12 col-md-8 col-lg-8 content animate" id="primary-font">
+                <div class="col-sm-12 col-md-8 col-lg-6 content animate" id="primary-font">
                     <span class="subtitle">Hi, my name is</span>
                     <h2>Will.</h2>
                     <h3>I partner with customers to fuel their success stories.</h3>
@@ -205,8 +205,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <img src="/images/headshot.png" class="img-fluid content rounded-circle animate img-thumbnail mx-auto" alt="Headshot">
+                <div class="mt-sm-5 m-sm-5 col-sm-8 col-md-4 col-lg-4 ">
+                    <img src="/images/headshot.png" class="img-fluid content rounded-circle animate img-thumbnail mx-auto" alt="Headshot" id="headshot">
                 </div>
             </div>
         </div>
@@ -475,22 +475,22 @@
     </section>
 </div>
 
-<section id="about" class="pb-0 py-sm-5">
+<section id="about" class="pb-0 py-0">
     <div class="container bg-transparent">
-        <h2 class="text-center bg-transparent">About Me</h2>
-        <div class="bg-transparent row justify-content-center px-3 py-2">
-            <div class="col-sm-12 col-md-8 col-lg-4 mb-lg-0 d-none d-sm-none d-md-block">
-                <img src="/images/about.png" class="rounded img-fluid mt-4" alt="about">
+        <div class="bg-transparent row justify-content-center px-0">
+            <div class="col-sm-12 col-md-4 col-lg-4 mb-lg-0 d-none d-sm-none d-md-block p-5">
+                <img src="/images/about.png" class="rounded img-fluid mt-md-4 mx-md-2" alt="about">
+                <img src="/images/kela.png" class="rounded img-fluid mt-md-4 mx-md-2" alt="about">
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-8 content">
+            <div class="col-sm-12 col-md-8 content">
                 <p>
 
                 <div>
-                    With years of experience rooted in web development, I’ve cultivated a deep understanding of both front-end and back-end technologies. My technical expertise spans database management, including MongoDB and SQL, as well as cloud platforms such as AWS, Google Cloud Platform, and Cloudflare. Over the course of my career, I’ve obtained certifications in Google Cloud Security and AWS Cloud Solutions, and I’m currently advancing my skill set by pursuing the AWS Solutions Architect certification.
+                    With over a decade of experience rooted in web development, I’ve cultivated a deep understanding of both front-end and back-end technologies. As new technologies emerge, my curiousity takes over leading to learning Docker, Kubernetes, Natural Language Processing, Pandas, Numpy, Data Warehouses cloud computing, etc. My professional expertise spans database management, architecting cloud solutions such as AWS, Google Cloud Platform, and Cloudflare. Over the course of my career, I’ve obtained certifications in Google Cloud Security and AWS Cloud Solutions, and I’m currently advancing my skill set by pursuing the AWS Solutions Architect certification.
                 </div>
                 <br />
                 <div>
-                    A defining chapter in my professional journey began when I transitioned into customer-facing technical roles, where I’ve spent the past 6-7 years excelling in both pre-sales and post-sales capacities. In these roles, I’ve had the privilege of working with some of the world’s largest organizations across industries such as retail, travel, and finance. My contributions have spanned the entire customer lifecycle—from delivering proof of concept solutions to driving adoption, optimizing implementations, and fostering lasting partnerships that transform customers into brand ambassadors.
+                    The defining chapter in my professional journey began when I transitioned into customer-facing technical roles, where I’ve spent the past 6-7 years in both pre-sales and post-sales capacities. In these roles, I’ve had the privilege of working with some of the world’s largest organizations across industries such as retail, travel, and finance. My contributions have spanned the entire customer lifecycle—from delivering proof of concept solutions to driving adoption, optimizing implementations, and fostering lasting partnerships that transform customers into brand ambassadors.
                 </div>
                 <br />
                 <div>
@@ -524,7 +524,7 @@
 
 <section id="education" class="py-5">
     <div class="container">
-        <h3 class="text-center">Experience</h3>
+        
         <div class="row justify-content-center py-5">
 
 
@@ -1074,6 +1074,33 @@
         localStorage.setItem("pref-theme", 'dark');
     }
 </script>
+<script>
+  const element = document.getElementById('hero-row');
+  const mq = window.matchMedia('(max-width: 768px)');
+
+        // Function to handle the media query change
+        function handleScreenResize(event) {
+
+            if (event.matches) {
+                console.log(event)
+                // Remove the ID when the screen is 768px or smaller
+                element.removeAttribute('id');
+                console.log('ID removed');
+            } else {
+                // Optionally re-add the ID if the screen is larger
+                element.setAttribute('id', 'myElement');
+                console.log('ID added back');
+            }
+        }
+
+        // Add the listener to the media query
+        mq.addEventListener('change', handleScreenResize);
+
+        // Run the function initially to check current screen size
+        handleScreenResize(mq);
+
+</script>
+
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         if (document.body.className.includes("dark")) {
