@@ -177,10 +177,6 @@ header .navbar.animate {
     transform: scale(1.05);
 }
 
-#hero a.btn.social-icon:hover {
-    background-color: var(--background-color) !important;
-    opacity: 0.7;
-}
 
 #hero .hero-content > a {
     
