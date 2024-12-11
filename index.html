@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Alata&family=Lora&family=Roboto&display=swap">
@@ -25,107 +24,20 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-    <style>
-        :root {
-            --text-color: #343a40;
-            --text-secondary-color: #6c757d;
-            --text-link-color: #007bff;
-            --background-color: #eaedf0;
-            --secondary-background-color: #64ffda1a;
-            --primary-color: #007bff;
-            --secondary-color: #f8f9fa;
-            --text-color-dark: #e4e6eb;
-            --text-secondary-color-dark: #b0b3b8;
-            --text-link-color-dark: #ffffff;
-            --background-color-dark: #18191a;
-            --secondary-background-color-dark: #212529;
-            --primary-color-dark: #ffffff;
-            --secondary-color-dark: #212529;
-        }
-
-        body {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            text-align: left;
-        }
-
-        html {
-            background-color: var(--background-color) !important;
-        }
-
-        body::-webkit-scrollbar {
-            height: 0;
-            width: 8px;
-            background-color: var(--background-color);
-        }
-
-        ::-webkit-scrollbar-track {
-            border-radius: 1rem;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 1rem;
-            background: #b0b0b0;
-            outline: 1px solid var(--background-color);
-        }
-
-        #search-content::-webkit-scrollbar {
-            width: .5em;
-            height: .1em;
-            background-color: var(--background-color);
-        }
-    </style>
-    <meta name="description" content="Text about my cool site">
+    <meta name="description" content="Will Carpenter Profile Site">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/projects.css">
+    <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
     <script defer src="/fontawesome-6/all-6.4.2.js"></script>
-    <title>Profile Site</title>
+    <script defer src="/js/theme-toggle.js"></script>
+    <script defer src="/js/pref-theme.js"></script>
+    <script defer src="js/scroll-pos.js"></script>
+    <script defer src="/js/handle-screen-size.js"></script>
+    <script defer src="/js/set-theme.js"></script>
+    <title>Will Carpenter-Profile</title>
 </head>
 
 <body class="light">
-<script>
-    let localStorageValue = localStorage.getItem("pref-theme");
-    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    switch (localStorageValue) {
-        case "dark":
-            document.body.classList.add('dark');
-            break;
-        case "light":
-            document.body.classList.remove('dark');
-            break;
-        default:
-            if (mediaQuery) {
-                document.body.classList.add('dark');
-            }
-            break;
-    }
-</script>
-
-<script>
-    var prevScrollPos = window.pageYOffset;
-    window.addEventListener("scroll", function showHeaderOnScroll() {
-        let profileHeaderElem = document.getElementById("profileHeader");
-        let currentScrollPos = window.pageYOffset;
-        let resetHeaderStyle = false;
-        let showNavBarOnScrollUp = true;
-        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
-        if (showNavBar) {
-            profileHeaderElem.classList.add("showHeaderOnTop");
-        } else {
-            resetHeaderStyle = true;
-        }
-        if (currentScrollPos === 0) {
-            resetHeaderStyle = true;
-        }
-        if (resetHeaderStyle) {
-            profileHeaderElem.classList.remove("showHeaderOnTop");
-        }
-        prevScrollPos = currentScrollPos;
-    });
-</script>
-
 <header id="profileHeader">
     <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
@@ -524,14 +436,9 @@
 
 <section id="education" class="py-5">
     <div class="container">
-        
         <div class="row justify-content-center py-5">
-
-
             <div class="col-12 p-0">
                 <div class="row row align-items-center justify-content-center m-1 mb-4">
-
-
                     <div class="col-md-9">
                         <div class="card">
                             <div class="card-body">
@@ -718,7 +625,7 @@
                         </div>
                         <h5 class="card-title bg-transparent mt-1">Super Mario</h5>
                         <div class="card-text bg-transparent secondary-font">
-                             Super mario bros game built on HTML5 canvas element incorporating sprites and dynamic audio. 
+                             Super mario bros game built on HTML5 canvas element incorporating sprites and dynamic audio.
                         </div>
                     </div>
 
@@ -770,7 +677,7 @@
 
                         <span class="float-end">
                             <a class="btn btn-sm" href="https://secrets-locker-9b84a42af80f.herokuapp.com/" target="_blank">
-                                Demo 
+                                Demo
                             </a>
                         </span>
 
@@ -1043,85 +950,29 @@
   </symbol>
 </svg>
 
-  </div>
 
-    <footer>
 
+<footer>
     <div class="container py-4">
-    <div class="row justify-content-center">
-        <div class="col-md-4 text-center">
-
-
-            <div class="text-secondary">
-                Shout out to
-                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
-                    title="Designed and developed by gurusabarish">
-                    Hugo Profile
-                </a>
-                <span class="text-danger">
-                    &#10084;
-                </span>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <div class="text-secondary">
+                    Shout out to
+                    <a href="https://github.com/gurusabarish/hugo-profile" target="_blank" title="Designed and developed by gurusabarish">
+                        Hugo Profile
+                    </a>
+                    <span class="text-danger">
+                        &#10084;
+                    </span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </footer>
 
-<script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
-<script>
-    if (document.body.className.includes("light")) {
-        document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
-    }
-</script>
-<script>
-  const element = document.getElementById('hero-row');
-  const mq = window.matchMedia('(max-width: 768px)');
-
-        // Function to handle the media query change
-        function handleScreenResize(event) {
-
-            if (event.matches) {
-                console.log(event)
-                // Remove the ID when the screen is 768px or smaller
-                element.removeAttribute('id');
-                console.log('ID removed');
-            } else {
-                // Optionally re-add the ID if the screen is larger
-                element.setAttribute('id', 'myElement');
-                console.log('ID added back');
-            }
-        }
-
-        // Add the listener to the media query
-        mq.addEventListener('change', handleScreenResize);
-
-        // Run the function initially to check current screen size
-        handleScreenResize(mq);
-
-</script>
-
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-
-</script>
-
-  <section id="search-content" class="py-2">
+<section id="search-content" class="py-2">
     <div class="container" id="search-results"></div>
-  </section>
+</section>
 </body>
 
 </html>
