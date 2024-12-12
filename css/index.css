@@ -584,6 +584,18 @@ header .navbar.animate {
     padding: .5rem 1rem;
 }
 
+#tab {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: left top;
+  font-weight: 300;
+    font-size: small;
+}
+
 
 @media (max-width: 768px) {
     #hero {
@@ -592,7 +604,5 @@ header .navbar.animate {
         line-height: 2rem;
         max-width: 100%;
     }
-
-    
 }
   

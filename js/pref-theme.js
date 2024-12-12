@@ -1,5 +1,7 @@
-    let localStorageValue = localStorage.getItem("pref-theme");
-    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+
+let localStorageValue = localStorage.getItem("pref-theme");
+let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     switch (localStorageValue) {
         case "dark":
