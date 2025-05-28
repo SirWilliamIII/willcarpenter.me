@@ -1,4 +1,5 @@
 {
-    "name": "willcarpenter/profile-site",
-    "description": "profile site for Will Carpenter"
+    "name": "willcarpenter-me",
+    "description": "Static site with PHP buildpack to serve index.html",
+    "require": {}
 }
