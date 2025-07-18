@@ -1,7 +1,7 @@
 /* light mode */
-.light > *{
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
+body.light {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .light > #footer-socialNetworks-github-svg-path{

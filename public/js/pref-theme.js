@@ -7,11 +7,12 @@ switch (localStorageValue) {
 
     break;
   case "light":
-    document.body.classList.remove("light");
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
     break;
   default:
     if (mediaQuery) {
-      document.body.classList.add("light");
+      document.body.classList.add("dark");
     }
     break;
 }
