@@ -3,6 +3,7 @@
   <head>
     <!-- Google tag (gtag.js) -->
     <!-- Google Tag Manager -->
+     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://static.cloudflareinsights.com;">
     <script>
       ;(function (w, d, s, l, i) {
         w[l] = w[l] || []
@@ -14,6 +15,7 @@
         j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
         f.parentNode.insertBefore(j, f)
       })(window, document, 'script', 'dataLayer', 'GTM-MM4NF82W')
+<!-- Allow Cloudflare analytics -->
 
       // Bot detection and filtering
       function isBot() {
@@ -185,6 +187,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://static.cloudflareinsights.com;">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta property="og:url" content="https://willcarpenter.me" />
     <meta property="og:site_name" content="Will Carpenter Profile Site" />
@@ -216,8 +219,7 @@
   </head>
 
   <body class="light">
-    <!-- Google Tag Manager (noscript) -->
-    <!-- Google Tag Manager (noscript) -->
+
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-MM4NF82W"
