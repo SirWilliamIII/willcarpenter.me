@@ -1,5 +1,0 @@
-{
-    "name": "willcarpenter-me",
-    "description": "Static site with PHP buildpack to serve index.html",
-    "require": {}
-}
