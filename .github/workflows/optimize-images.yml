@@ -1,0 +1,84 @@
+name: Optimize Images
+
+# This workflow automatically optimizes images when they're added to the repository
+# It runs on pushes that include image files in the public/images directory
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'public/images/**/*.png'
+      - 'public/images/**/*.jpg'
+      - 'public/images/**/*.jpeg'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2  # Need at least 2 commits to compare
+
+    - name: Install ImageMagick
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick
+
+    - name: Get changed image files
+      id: changed-files
+      run: |
+        # Get list of changed image files
+        git diff --name-only HEAD~1 HEAD | \
+        grep -E '\.(png|jpg|jpeg)$' | \
+        grep '^public/images/' > changed_images.txt || true
+
+        if [ -s changed_images.txt ]; then
+          echo "found=true" >> $GITHUB_OUTPUT
+          echo "Changed images:"
+          cat changed_images.txt
+        else
+          echo "found=false" >> $GITHUB_OUTPUT
+          echo "No image files changed"
+        fi
+
+    - name: Optimize images
+      if: steps.changed-files.outputs.found == 'true'
+      run: |
+        while IFS= read -r file; do
+          if [ -f "$file" ]; then
+            echo "Optimizing: $file"
+            original_size=$(stat -c%s "$file")
+
+            # Optimize with ImageMagick
+            convert "$file" -quality 85 -strip "$file.tmp"
+
+            new_size=$(stat -c%s "$file.tmp")
+
+            if [ $new_size -lt $original_size ]; then
+              saved=$((original_size - new_size))
+              percent=$((100 - (new_size * 100 / original_size)))
+              echo "  ✓ Saved ${saved} bytes (${percent}% reduction)"
+              mv "$file.tmp" "$file"
+            else
+              echo "  → No improvement, keeping original"
+              rm "$file.tmp"
+            fi
+          fi
+        done < changed_images.txt
+
+    - name: Commit optimized images
+      if: steps.changed-files.outputs.found == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        # Check if there are changes to commit
+        if git diff --quiet; then
+          echo "No optimization changes to commit"
+        else
+          git add public/images/
+          git commit -m "chore: optimize images [skip ci]"
+          git push
+        fi

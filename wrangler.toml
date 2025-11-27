@@ -1,0 +1,20 @@
+name = "willcarpenter-me"
+compatibility_date = "2025-01-27"
+
+[site]
+bucket = "./public"
+
+# Enable automatic minification
+[build]
+command = ""
+cwd = ""
+watch_dirs = []
+
+# Environment variables (if needed)
+[vars]
+# Add any environment variables here
+
+# Custom routes (if needed for advanced routing)
+# [routes]
+# pattern = "*"
+# custom_domain = true

@@ -1,9 +1,16 @@
 # Canonical host: send www -> apex
 https://www.willcarpenter.me/*   https://willcarpenter.me/:splat   301
 
-# Example shortlinks (edit/remove)
-# /resume    /will_carpenter_resume.pdf   302
-# /about     /index.html#about            302
+# Useful shortlinks
+/github    https://github.com/SirWilliamIII   302
+/linkedin  https://linkedin.com/in/will-carpenter   302
+/about     /#about   302
+/projects  /#lab-highlights   302
+/labs      /#lab-highlights   302
+/experience /#experience   302
 
-# (If this were an SPA, you’d use the line below instead of the default 404 behavior)
-# /*    /index.html    200
+# Legacy URL support (if you had old URLs)
+# /blog/*    /#blog   301
+
+# 404 fallback - ensure custom 404 page is served
+/*    /404.html   404

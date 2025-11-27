@@ -139,3 +139,7 @@ dist
 .pnp.*
 .qodo
 .qodo/*
+
+# Image optimization backups
+*.bak
+public/images/*.bak

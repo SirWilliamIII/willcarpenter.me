@@ -1,0 +1,22 @@
+# Cloudflare Pages Build Configuration
+# https://developers.cloudflare.com/pages/configuration/build-configuration/
+
+# Build settings
+build:
+  command: echo "Static site - no build required"
+  output_directory: public
+
+# Environment variables
+# env:
+#   NODE_VERSION: 18
+
+# Preview branch configuration
+preview:
+  branch_includes:
+    - "*"
+  branch_excludes:
+    - main
+    - production
+
+# Production branch
+production_branch: main

@@ -163,6 +163,48 @@ To test theme switching:
 3. Ensure no FOUC (flash of unstyled content) on page load
 4. Test that all colors respond to theme changes (no hardcoded values)
 
+## Deployment
+
+This site is deployed to **Cloudflare Pages** with automatic deployments from GitHub.
+
+### Quick Deploy
+
+```bash
+# Recommended: Full deployment with optimization
+./deploy.sh
+
+# Skip image optimization
+./deploy.sh --skip-optimize
+```
+
+### Deployment Files
+
+- **wrangler.toml**: CF Pages configuration
+- **.cfpages.yml**: Build settings (output: `public/`)
+- **public/_headers**: HTTP security and caching headers
+- **public/_redirects**: URL redirects and shortlinks
+- **.github/workflows/optimize-images.yml**: Auto-optimize images on push
+
+### Image Optimization
+
+Before committing large images:
+
+```bash
+./optimize-images.sh
+```
+
+Requires: `brew install imagemagick`
+
+### Configuration
+
+- **Platform**: Cloudflare Pages
+- **Build directory**: `public/`
+- **Build command**: None (static site)
+- **Production URL**: https://willcarpenter.me
+- **Auto-deploy**: Enabled on push to `main`
+
+See `DEPLOYMENT.md` for detailed deployment guide and `QUICKSTART.md` for quick reference.
+
 ## Git Workflow
 
 This repository uses a simple main branch workflow:
