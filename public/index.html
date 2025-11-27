@@ -42,12 +42,14 @@
     <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/projects.css" />
+    <link rel="stylesheet" href="/css/experience.css" />
     <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
     <script defer src="/fontawesome-6/all-6.4.2.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Will Carpenter</title>
   </head>
 
-  <body class="light">
+  <body class="dark">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -94,12 +96,57 @@
                 <a class="nav-link" href="/#about" aria-label="about">About Me</a>
               </li>
               <li class="nav-item navbar-text">
-                <a class="nav-link" href="/#education" aria-label="experience"
+                <a class="nav-link" href="/#experience" aria-label="experience"
                   >Experience</a
                 >
               </li>
               <li class="nav-item navbar-text">
                 <a class="nav-link" href="/#projects" aria-label="contact">Projects</a>
+              </li>
+              <li class="nav-item navbar-text dropdown">
+                <a
+                  class="nav-link lab-pill"
+                  href="#"
+                  id="labDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="lab projects"
+                >
+                  Play Labs
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end lab-dropdown"
+                  aria-labelledby="labDropdown"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://probablyfine.lol"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <span class="lab-link-title">probablyfine.lol</span>
+                      <span class="lab-link-desc"
+                        >Explore vector space like never before</span
+                      >
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://f1.probablyfine.lol"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <span class="lab-link-title">f1.probablyfine.lol</span>
+                      <span class="lab-link-desc"
+                        >Ever wonder what all those graphs mean? Ask an expert</span
+                      >
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item navbar-text">
                 <div class="text-center">
@@ -150,59 +197,81 @@
     </header>
 
     <div id="content">
-      <section id="hero" class="pt-md-5 align-middle">
-        <div class="container px-3 px-sm-5 pt-md-5 pt-lg-5 pt-lg-3">
+      <section id="hero" class="align-middle">
+        <div class="container px-3 px-sm-5">
           <div class="row" id="hero-row">
-            <div class="col-sm-12 col-md-8 col-lg-6 content animate" id="primary-font">
-              <span class="subtitle">Hi, my name is</span>
-              <h2>Will.</h2>
-              <h3>I partner with customers to fuel their success stories.</h3>
+            <div class="col-sm-12 col-md-8 col-lg-7 content animate" id="primary-font">
+              <span class="subtitle">Hi, my name is Will</span>
+
+              <!-- Headline Stack -->
+              <h1 class="visually-hidden">
+                Will Carpenter - Senior Customer Success Engineer, Data Curious, Builder
+              </h1>
+              <div class="headline-stack" aria-hidden="true">
+                <span class="headline-item">Customer Success Engineer</span>
+                <span class="headline-arrow">→</span>
+                <span class="headline-item">Data Curious</span>
+                <span class="headline-arrow">→</span>
+                <span class="headline-item">Builder</span>
+              </div>
+
               <p class="hero-content">
-                My career in technology has been a dynamic journey, evolving from web
-                development to customer-centric roles where I've found my true passion.
-                Allow me to share the highlights of this professional path.
+                <strong
+                  >I partner with enterprises to fuel their success stories—</strong
+                >
+                from onboardings and technical implementation to strategic enablement,
+                being the front-line point of contact to building long-term trust. I
+                have working with Fortune 50 companies like Kroger, The Home Depot,
+                Nintendo of America, and T. Rowe Price to launch data-rich CX programs.
               </p>
-              <div class="row">
-                <div class="col-auto h-100">
-                  <div>
+
+              <!-- Primary CTAs -->
+              <div class="hero-ctas">
+                <a
+                  href="/will_carpenter_resume.pdf"
+                  target="_blank"
+                  class="btn btn-primary-hero"
+                >
+                  View Resume
+                </a>
+                <a href="mailto:will@willcarpenter.me" class="btn btn-secondary-hero">
+                  Say Hello
+                </a>
+              </div>
+
+              <!-- Micro-CTA for probablyfine.lol -->
+              <div class="micro-cta">
+                <span class="micro-cta-text">
+                  Currently shipping
+                  <a
+                    href="https://probablyfine.lol"
+                    target="_blank"
+                    rel="noopener"
+                    class="micro-cta-link"
+                  >
+                    probablyfine.lol
+                  </a>
+                  experiments
+                  <span class="micro-cta-secondary">
+                    (+
                     <a
-                      id="resume-btn"
-                      href="/will_carpenter_resume.pdf"
+                      href="https://f1.probablyfine.lol"
                       target="_blank"
-                      class="btn"
-                      >Resume</a
-                    >
-                  </div>
-                </div>
-                <div class="col-auto px-0 h-100">
-                  <span>
-                    <span class="px-1">
-                      <a
-                        href="https://github.com/SirWilliamIII/"
-                        target="_blank"
-                        class="btn social-icon"
-                      >
-                        <i class="fab fa-github"></i>
-                      </a>
-                    </span>
-                    <span class="px-1">
-                      <a
-                        href="https://www.linkedin.com/in/williamcarpenteriii/"
-                        target="_blank"
-                        class="btn social-icon"
-                      >
-                        <i class="fab fa-linkedin"></i>
-                      </a>
-                    </span>
+                      rel="noopener"
+                      class="micro-cta-link"
+                      >F1 data playground</a
+                    >)
                   </span>
-                </div>
+                  → <span class="micro-cta-action">Explore</span>
+                </span>
               </div>
             </div>
-            <div class="mt-sm-5 col-sm-8 col-md-4 col-lg-4">
+
+            <div class="col-sm-8 col-md-4 col-lg-5">
               <img
                 src="/images/headshot.jpg"
                 class="img-fluid content rounded-circle animate img-thumbnail ml-md-3"
-                alt="Headshot"
+                alt="Will Carpenter, Customer Success Engineer"
                 id="headshot"
               />
             </div>
@@ -211,13 +280,32 @@
       </section>
     </div>
 
-    <section id="about" class="py-5">
-      <div class="container bg-transparent">
+    <!-- Client Companies Section -->
+    <section id="client-companies" data-aos="fade-up">
+      <div class="container">
         <div class="row justify-content-center">
-          <div class="col-12 text-center">
-            <h3 class="text-uppercase text-center">About Me</h3>
-            <p class="text-muted"></p>
+          <div class="col-12 col-lg-10">
+            <p class="client-badges-label">Partnering with Fortune 50 companies</p>
+            <div class="client-badges">
+              <span class="client-badge">Kroger</span>
+              <span class="client-badge">The Home Depot</span>
+              <span class="client-badge">Academy Sports + Outdoors</span>
+              <span class="client-badge">Ulta</span>
+              <span class="client-badge">Enterprise Holdings</span>
+              <span class="client-badge">Ford Motor Company R&D</span>
+              <span class="client-badge">T. Rowe Price</span>
+              <span class="client-badge">Nintendo of America</span>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" data-aos="fade-up">
+      <div class="container bg-transparent">
+        <h3 class="section-title-about text-center">About</h3>
+        <div class="row justify-content-center">
+          <div class="col-12">
           <div class="row align-items-center justify-content-center px-2">
             <div class="col-md-4 d-none d-md-block p-4 text-center">
               <img
@@ -232,36 +320,27 @@
               />
             </div>
             <div class="col-md-8 content" id="main-text">
+              <h4 class="about-subheading">Background</h4>
               <p>
-                My background began in software development, but over time I
-                transitioned into customer-facing technical roles—working with large
-                enterprise clients -- learning their business processes, tech stack,
-                team dynamics, and pain points in order to deliver long-term impact
-                throughout the customer lifecycle.
+                I started my career on the engineering side, with a focus on Electrical Engineering and Computer Science but over time I kept getting pulled toward customer-facing work. Through the years I worked with the whole spectrum of different sized companies. From relatively small law and accounting firms to the biggest enterprise customers possible. I was given the opportunity to join these prestigious teams-—figuring out how they operate, what slows them down, what their tech stack actually looks like in the wild, and where the real friction points are. In gaining this understanding of 'their' world I quickly realized that solving businees issues is not about how elegant your code is but how much value it delivers.
+              </p>
+
+              <h4 class="about-subheading">Technical Foundation</h4>
+              <p>
+                Technically, I'm hands-on. I've built and maintained API integrations, automated workflows end-to-end, written custom scripts and SQL to solve messy business problems, set up SSO/RBAC, and helped stand up data pipelines. I've always operated as the "technical partner who actually understands what's going on," from day-one onboarding to long-term enablement, scaling, and expansion.
+              </p>
+
+              <h4 class="about-subheading">My Approach</h4>
+              <p>
+                My style is simple: build relationships, deliver value fast, and keep showing up. I'm comfortable running enablement sessions, spotting expansion opportunities without being pushy, leading QBRs, and being the internal voice for my customers when something needs to get unblocked. Consistency, transparency, and responsiveness are how I earn that trusted-advisor status.
+              </p>
+
+              <h4 class="about-subheading">What Drives Me</h4>
+              <p>
+                What actually motivates me isn’t just product adoption—it’s seeing a customer’s entire workflow or strategy shift because of something we implemented together. I’ve helped teams cut hours of manual work, unlock blocked roadmaps, and surface insights that change how they operate. Listening with intent and empathy is the first step to becoming their trusted advisor. Once you understand their politics and tech stack the opportunity to have larger conversations becomes much more organic. And that’s the kind of impact people remember.
               </p>
               <p>
-                On the technical side, I have built and maintained custom API
-                integrations, automated workflows, written custom scripts and SQL
-                queries to solve business needs, configured SSO and RBAC, and helped
-                stand up data pipelines always serving as a hands-on technical advisor
-                -- from onboarding through ongoing enablement and expansion.
-              </p>
-              <p>
-                My approach is to focus on relationships and drive quick time-to-value.
-                Comfortable running enablement sessions, uncovering expansion
-                opportunities, leading QBRs and always advocating for my customers
-                internally. My mission is to earn the status of a trusted advisor
-                through transparency, responsiveness, and consistency.
-              </p>
-              <p>
-                What drives me is not just product adoption — it is watching customers
-                transform their operations because of it. I have helped teams eliminate
-                hours of tedious work, unblock critical roadmaps, and surface insights
-                that shift entire strategies. Those are impacts that stick. In my
-                experience, revenue retention and expansion hinge less on features and
-                more on being that partner customers trust when the stakes are high —
-                one who is reliable, resourceful, trustworthy, and relentlessly
-                outcome-focused.
+                And from everything I’ve seen, retention and expansion aren’t about flashy features; they’re about being the partner customers lean on when the stakes are high—the one who is reliable, resourceful, and relentlessly focused on outcomes that matter.
               </p>
             </div>
           </div>
@@ -269,159 +348,176 @@
       </div>
     </section>
 
-    <section id="education" class="py-5">
+    <!-- Lab Highlights Section -->
+    <section id="lab-highlights" data-aos="fade-up">
       <div class="container">
-        <div class="row justify-content-center py-5">
-          <div class="col-12 p-0">
-            <div class="row row align-items-center justify-content-center m-1 mb-4">
-              <div class="col-md-9">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="float-end">
-                      <small>2021-2025</small>
-                    </div>
-                    <h3 class="card-title">Senior Customer Success Engineer</h3>
-                    <h4 class="py-3">Quantum Metric</h4>
-                    <p>
-                      <em>
-                        Digital intelligence platform that provides real-time analytics
-                        and insights to help businesses optimize their digital
-                        experiences, improve customer satisfaction, and increase
-                        conversions
-                      </em>
-                    </p>
-                    <div class="py-1 education-content">
-                      <ul>
-                        <li>
-                          Handled enterprise-scale technical implementations - SSO/RBAC
-                          configurations (SAML/OAuth), custom API integrations, PII
-                          compliance setups, and data pipeline architecture for multiple
-                          Fortune 50 clients expecting engineering-level execution.
-                        </li>
-                        <li>
-                          Managed $4M portfolio across portfolio achieving a 95%+
-                          revenue retention - grew portfolio through strategic upsells
-                          and based on CSAT and business outcomes.
-                        </li>
-                        <li>
-                          Collaborated with a leading Japanese video game manufacturer
-                          and helped transform company culture through real-time
-                          insights into customer behavior.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+        <!-- Labs Intro -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-12 col-lg-10">
+            <div class="labs-intro-section">
+              <h3 class="section-title text-center">Labs & Experiments</h3>
+              <p class="labs-intro-description text-center">
+                Building production RAG pipelines with adaptive chunking, multi-vector embeddings, and retrieval heuristics.
+                Member of the <a href="https://austinaialliance.org" target="_blank" rel="noopener" class="labs-inline-link">Austin AI Alliance</a>.
+              </p>
+              <div class="labs-tech-stack">
+                <span class="labs-tech-badge">BGE-M3</span>
+                <span class="labs-tech-badge">Qdrant</span>
+                <span class="labs-tech-badge">FastAPI</span>
+                <span class="labs-tech-badge">Ollama</span>
+              </div>
+              <div class="labs-project-links">
+                <a
+                  href="https://probablyfine.lol"
+                  target="_blank"
+                  rel="noopener"
+                  class="labs-project-link"
+                >
+                  <span class="labs-link-arrow">→</span>
+                  <span class="labs-link-url">probablyfine.lol</span>
+                  <span class="labs-link-desc">Retrieval playground</span>
+                </a>
+                <a
+                  href="https://f1.probablyfine.lol"
+                  target="_blank"
+                  rel="noopener"
+                  class="labs-project-link"
+                >
+                  <span class="labs-link-arrow">→</span>
+                  <span class="labs-link-url">f1.probablyfine.lol</span>
+                  <span class="labs-link-desc">Live telemetry insights</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Cards -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-12 text-center">
+            <h4 class="section-subtitle-secondary">Featured Projects</h4>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center" id="projects">
+          <!-- Card 1: Vectorspace -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="lab-card h-100">
+              <div class="lab-card-image">
+                <img
+                  src="/images/viz.png"
+                  alt="Vector Similarity Explorer"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="lab-card-body">
+                <h4 class="lab-card-title">Vector Similarity Explorer</h4>
+                <p class="lab-card-tagline">Add words and see cosine shifts in 3D</p>
+                <div class="lab-card-description">
+                  <p>
+                    Interactive tool to explore how transformer models understand semantic
+                    relationships. Built with Three.js and @xenova/transformers running
+                    entirely in your browser.
+                  </p>
+                </div>
+                <div class="lab-card-badges">
+                  <span class="tech-badge">Three.js</span>
+                  <span class="tech-badge">Transformers</span>
+                  <span class="tech-badge">PCA</span>
+                </div>
+                <div class="lab-card-cta">
+                    <a
+                      href="https://vectorspace.linux-box.cc"
+                      target="_blank"
+                      rel="noopener"
+                      class="btn"
+                    >
+                      Demo
+                    </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 p-0">
-            <div class="row row align-items-center justify-content-center m-1 mb-4">
-              <div class="col-md-9">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="float-end">
-                      <small>2019 - 2021</small>
-                    </div>
-                    <h3 class="card-title">Implementation Engineer</h3>
-                    <h4 class="py-3">Cloudsnap</h4>
-                    <div class="py-1">
-                      <p>
-                        <em
-                          >An automation platform that connects and integrates cloud or
-                          on-premises enterprise applications to automate manual
-                          tasks.</em
-                        >
-                      </p>
-                      <i><small>*company acquired by Paylocity in 2022</small></i>
-                    </div>
-                    <div class="py-1 education-content">
-                      <ul>
-                        <li>
-                          Architected ERP integrations (SAP, NetSuite) which automated
-                          workflows, saving 10+ hours per week for clients.
-                        </li>
-                        <li>Solely managed portfolio of 20+ high touch accounts</li>
-                      </ul>
-                    </div>
-                  </div>
+          <!-- Card 2: F1 Telemetry -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="lab-card h-100">
+              <div class="lab-card-image">
+                <img
+                  src="/images/racecar.png"
+                  alt="F1 Race Analysis"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="lab-card-body">
+                <h4 class="lab-card-title">F1 Race Analysis Platform</h4>
+                <p class="lab-card-tagline">Live telemetry insights via AI</p>
+                <div class="lab-card-description">
+                  <p>
+                    Production system that analyzes Formula 1 driver performance with
+                    custom racing moment classifiers and Ollama-powered insights. Hybrid
+                    GPU architecture for 5x faster analysis.
+                  </p>
+                </div>
+                <div class="lab-card-badges">
+                  <span class="tech-badge">FastAPI</span>
+                  <span class="tech-badge">Ollama</span>
+                  <span class="tech-badge">Modal GPU</span>
+                </div>
+                <div class="lab-card-cta">
+                    <a
+                      href="https://f1.probablyfine.lol"
+                      target="_blank"
+                      rel="noopener"
+                      class="btn"
+                    >
+                      Demo
+                    </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 p-0">
-            <div class="row row align-items-center justify-content-center m-1 mb-4">
-              <div class="col-md-9">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="float-end">
-                      <small>2017 - 2019</small>
-                    </div>
-                    <h3 class="card-title">Sales Engineer</h3>
-                    <h4 class="py-3">Cloudsnap</h4>
-                    <div class="py-1">
-                      <p>
-                        <em
-                          >An automation platform that connects and integrates cloud or
-                          on-premises enterprise applications to automate manual
-                          tasks.</em
+          <!-- Card 3: Mechanical Integrity -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="lab-card lab-card-enterprise h-100">
+                <div class="lab-card-image">
+                    <div class="lab-card-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="64"
+                          height="64"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                      </p>
-                      <i><small>*company acquired by Paylocity in 2022</small></i>
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                          <path d="M12 8v4"></path>
+                          <path d="M12 16h.01"></path>
+                        </svg>
                     </div>
-                    <div class="py-1 education-content">
-                      <ul>
-                        <li>
-                          Partnered with sales teams to identify customer needs and
-                          deliver tailored technical solutions, resulting in a 300%
-                          spike in revenue.
-                        </li>
-                        <li>
-                          Managed and qualified prospective customers creating tailored
-                          proof of concepts to demonstrate quick time to value
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="row row align-items-center justify-content-center m-1 mb-4">
-              <div class="col-md-9">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="float-end">
-                      <small>2014 - 2017</small>
-                    </div>
-                    <h3 class="card-title">Software Engineer</h3>
-                    <h4 class="py-3">Right Call Consulting</h4>
-                    <div class="py-1">
-                      <p>
-                        <em
-                          >A framework for repetition-based learning so athletes and
-                          coaches get the most out of every minute.</em
-                        >
-                      </p>
-                    </div>
-                    <div class="py-1 education-content">
-                      <ul>
-                        <li>
-                          Developed interactive client interfaces for NFL and collegiate
-                          programs, improving user engagement.
-                        </li>
-                        <li>
-                          Architected an app using JavaScript and HTML to enhance
-                          real-time data visualization.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              <div class="lab-card-body">
+                <h4 class="lab-card-title">Enterprise Safety-Critical Systems</h4>
+                <p class="lab-card-tagline">
+                  API 579/ASME compliance for petroleum industry
+                </p>
+                <div class="lab-card-description">
+                  <p>
+                    Built SIL 3 mechanical integrity software for refinery equipment
+                    analysis. Dual-path verification, regulatory audit trails, and
+                    zero-tolerance safety design.
+                  </p>
                 </div>
+                <div class="lab-card-badges">
+                  <span class="tech-badge">FastAPI</span>
+                  <span class="tech-badge">PostgreSQL</span>
+                  <span class="tech-badge">Kubernetes</span>
+                </div>
+                <div class="lab-card-note">Proprietary safety-critical software</div>
               </div>
             </div>
           </div>
@@ -429,7 +525,91 @@
       </div>
     </section>
 
-    <section id="projects" class="py-5">
+    <section id="experience" data-aos="fade-up">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-title-experience">Experience</h3>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li data-aos="fade-up">
+                        <div class="timeline-badge primary"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Senior Customer Success Engineer</h4>
+                                <p><small class="text-muted"><i class="fas fa-clock"></i> 2021-2025 at Quantum Metric</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><em>Digital intelligence platform that provides real-time analytics and insights to help businesses optimize their digital experiences, improve customer satisfaction, and increase conversions</em></p>
+                                <ul>
+                                    <li>Handled enterprise-scale technical implementations - SSO/RBAC configurations (SAML/OAuth), custom API integrations, PII compliance setups, and data pipeline architecture for multiple Fortune 50 clients expecting engineering-level execution.</li>
+                                    <li>Managed $4M portfolio across portfolio achieving a 95%+ revenue retention - grew portfolio through strategic upsells and based on CSAT and business outcomes.</li>
+                                    <li>Collaborated with a leading Japanese video game manufacturer and helped transform company culture through real-time insights into customer behavior.</li>
+                                    <li><strong>Key Accounts:</strong> The Home Depot, Academy Sports, Ulta Beauty, Enterprise Holdings, Nintendo of America</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted" data-aos="fade-up">
+                        <div class="timeline-badge primary"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Implementation Engineer</h4>
+                                <p><small class="text-muted"><i class="fas fa-clock"></i> 2019 - 2021 at Cloudsnap</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><em>An automation platform that connects and integrates cloud or on-premises enterprise applications to automate manual tasks. *company acquired by Paylocity in 2022</em></p>
+                                <ul>
+                                    <li>Architected ERP integrations (SAP, NetSuite) which automated workflows, saving 10+ hours per week for clients.</li>
+                                    <li>Solely managed portfolio of 20+ high touch accounts</li>
+                                    <li><strong>Key Accounts:</strong> Kroger, T. Rowe Price</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-aos="fade-up">
+                        <div class="timeline-badge primary"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Sales Engineer</h4>
+                                <p><small class="text-muted"><i class="fas fa-clock"></i> 2017 - 2019 at Cloudsnap</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><em>An automation platform that connects and integrates cloud or on-premises enterprise applications to automate manual tasks. *company acquired by Paylocity in 2022</em></p>
+                                <ul>
+                                    <li>Partnered with sales teams to identify customer needs and deliver tailored technical solutions, resulting in a 300% spike in revenue.</li>
+                                    <li>Managed and qualified prospective customers creating tailored proof of concepts to demonstrate quick time to value</li>
+                                    <li><strong>Key Accounts:</strong> Kroger, T. Rowe Price</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted" data-aos="fade-up">
+                        <div class="timeline-badge primary"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Software Engineer</h4>
+                                <p><small class="text-muted"><i class="fas fa-clock"></i> 2014 - 2017 at Right Call Consulting</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><em>A framework for repetition-based learning so athletes and coaches get the most out of every minute.</em></p>
+                                <ul>
+                                    <li>Developed interactive client interfaces for NFL and collegiate programs, improving user engagement.</li>
+                                    <li>Architected an app using JavaScript and HTML to enhance real-time data visualization.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="projects" class="py-5">
       <div class="container">
         <h3 class="text-center">Projects</h3>
         <div class="row justify-content-center px-3 px-md-5">
@@ -639,21 +819,18 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <footer style="text-align: center; color: #aaa; font-size: 0.9rem">
+    <footer class="footer-main">
       <div class="container py-4">
         <div class="row justify-content-center">
-          <div class="col-md-4 text-center">
-            <div class="text-secondary">
-              <hr style="border-color: #333; margin-bottom: 1rem" />
-              <p>
-                © 2025 Will Carpenter •
-                <a href="mailto:will@willcarpenter.me" style="color: #aaa"
-                  >will@willcarpenter.me</a
-                >
-              </p>
-            </div>
+          <div class="col-12 text-center">
+            <p class="copyright-text">
+              © 2025 Will Carpenter •
+              <a href="mailto:will@willcarpenter.me" class="footer-email"
+                >will@willcarpenter.me</a
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -664,5 +841,9 @@
     <script defer src="/js/pref-theme.js"></script>
     <script src="/js/set-theme.js"></script>
     <script defer src="/js/theme-toggle.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

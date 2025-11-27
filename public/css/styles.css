@@ -1,18 +1,23 @@
 :root {
-  --text-color: #343a40;
-  --text-secondary-color: #6c757d;
+  --text-color: #1a1a1a;
+  --text-secondary-color: #4a4a4a;
   --text-link-color: #007bff;
   --background-color: #eaedf0;
   --secondary-background-color: #64ffda1a;
   --primary-color: #007bff;
   --secondary-color: #f8f9fa;
   --text-color-dark: #e4e6eb;
-  --text-secondary-color-dark: #b0b3b8;
+  --text-secondary-color-dark: #8a8d91;
   --text-link-color-dark: #ffffff;
   --background-color-dark: #18191a;
   --secondary-background-color-dark: #212529;
   --primary-color-dark: #ffffff;
   --secondary-color-dark: #212529;
+
+  /* Consistent section spacing */
+  --section-padding-block: 5rem;
+  --section-gap: 4rem;
+  --content-max-width: 1200px;
 }
 
 body {
@@ -45,7 +50,7 @@ body::-webkit-scrollbar {
 #search-content::-webkit-scrollbar {
   width: 0.5em;
   height: 0.1em;
-  background-color: var(--background-color);
+  background-.lab-card-cta .btncolor: var(--background-color);
 }
 
 #about .aboutImg {
@@ -72,5 +77,28 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: center;
     height: 100%;
+  }
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-block: 3rem;
+    --section-gap: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --section-padding-block: 2rem;
+    --section-gap: 2rem;
+  }
+
+  #about .content {
+    padding: 1rem;
+  }
+
+  #about .content p {
+    line-height: 1.7;
   }
 }
