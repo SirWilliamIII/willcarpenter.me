@@ -1001,22 +1001,7 @@ header .navbar.animate {
   display: flex;
   align-items: center;
   padding-block: var(--section-padding-block);
-  background-color: #ffffff;
-}
-
-body.dark #lab-highlights {
-  color: #1a1a1a !important;
-}
-
-body.dark #lab-highlights h1,
-body.dark #lab-highlights h2,
-body.dark #lab-highlights h3,
-body.dark #lab-highlights h4,
-body.dark #lab-highlights p,
-body.dark #lab-highlights span,
-body.dark #lab-highlights a,
-body.dark #lab-highlights strong {
-  color: #1a1a1a !important;
+  background-color: var(--background-color);
 }
 
 #lab-highlights .section-title {
