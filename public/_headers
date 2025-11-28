@@ -5,7 +5,7 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com; frame-ancestors 'none'
+  # Content-Security-Policy: disabled temporarily for debugging
 
 # Heavily cache hashed assets (adjust paths if yours differ)
 /assets/*
