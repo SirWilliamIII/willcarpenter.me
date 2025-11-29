@@ -63,8 +63,7 @@
 
     <header id="profileHeader">
       <nav class="pt-3 navbar navbar-expand-lg animate">
-        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
-          <a class="navbar-brand primary-font text-wrap" href="/">WTC3</a>
+        <div class="container-fluid px-3 px-sm-5">
           <button
             class="navbar-toggler"
             type="button"
@@ -91,7 +90,12 @@
             class="collapse navbar-collapse text-wrap primary-font"
             id="navbarContent"
           >
-            <ul class="navbar-nav ms-auto text-center">
+            <ul class="navbar-nav w-100 text-center">
+              <li class="nav-item navbar-text">
+                <a class="navbar-brand nav-link" href="/">
+                  <img src="/images/favicon.svg" alt="Will Carpenter Logo" class="navbar-logo" />
+                </a>
+              </li>
               <li class="nav-item navbar-text">
                 <a class="nav-link" href="/#about" aria-label="about">About Me</a>
               </li>
@@ -126,7 +130,7 @@
                       target="_blank"
                       rel="noopener"
                     >
-                      <span class="lab-link-title">probablyfine.lol</span>
+                      <span class="lab-link-title">Vector Space Explorer</span>
                       <span class="lab-link-desc"
                         >Explore vector space like never before</span
                       >
@@ -140,7 +144,7 @@
                       target="_blank"
                       rel="noopener"
                     >
-                      <span class="lab-link-title">f1.probablyfine.lol</span>
+                      <span class="lab-link-title">Formula 1 Smart Race Analyzer</span>
                       <span class="lab-link-desc"
                         >Ever wonder what all those graphs mean? Ask an expert</span
                       >
@@ -238,33 +242,6 @@
                   Say Hello
                 </a>
               </div>
-
-              <!-- Micro-CTA for probablyfine.lol -->
-              <div class="micro-cta">
-                <span class="micro-cta-text">
-                  Currently shipping
-                  <a
-                    href="https://probablyfine.lol"
-                    target="_blank"
-                    rel="noopener"
-                    class="micro-cta-link"
-                  >
-                    probablyfine.lol
-                  </a>
-                  experiments
-                  <span class="micro-cta-secondary">
-                    (+
-                    <a
-                      href="https://f1.probablyfine.lol"
-                      target="_blank"
-                      rel="noopener"
-                      class="micro-cta-link"
-                      >F1 data playground</a
-                    >)
-                  </span>
-                  → <span class="micro-cta-action">Explore</span>
-                </span>
-              </div>
             </div>
 
             <div class="col-sm-8 col-md-4 col-lg-5">
@@ -351,58 +328,21 @@
     <!-- Lab Highlights Section -->
     <section id="lab-highlights" data-aos="fade-up">
       <div class="container">
-        <!-- Labs Intro -->
+        <!-- Project Cards Header -->
         <div class="row justify-content-center mb-5">
-          <div class="col-12 col-lg-10">
-            <div class="labs-intro-section">
-              <h3 class="section-title text-center">Labs & Experiments</h3>
-              <p class="labs-intro-description text-center">
-                Building production RAG pipelines with adaptive chunking, multi-vector embeddings, and retrieval heuristics.
-                Member of the <a href="https://austinaialliance.org" target="_blank" rel="noopener" class="labs-inline-link">Austin AI Alliance</a>.
-              </p>
-              <div class="labs-tech-stack">
-                <span class="labs-tech-badge">BGE-M3</span>
-                <span class="labs-tech-badge">Qdrant</span>
-                <span class="labs-tech-badge">FastAPI</span>
-                <span class="labs-tech-badge">Ollama</span>
-              </div>
-              <div class="labs-project-links">
-                <a
-                  href="https://probablyfine.lol"
-                  target="_blank"
-                  rel="noopener"
-                  class="labs-project-link"
-                >
-                  <span class="labs-link-arrow">→</span>
-                  <span class="labs-link-url">probablyfine.lol</span>
-                  <span class="labs-link-desc">Retrieval playground</span>
-                </a>
-                <a
-                  href="https://f1.probablyfine.lol"
-                  target="_blank"
-                  rel="noopener"
-                  class="labs-project-link"
-                >
-                  <span class="labs-link-arrow">→</span>
-                  <span class="labs-link-url">f1.probablyfine.lol</span>
-                  <span class="labs-link-desc">Live telemetry insights</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Cards -->
-        <div class="row justify-content-center mb-4">
           <div class="col-12 text-center">
-            <h4 class="section-subtitle-secondary">Featured Projects</h4>
+            <h3 class="section-title">Labs & Experiments</h3>
           </div>
         </div>
 
         <div class="row g-4 justify-content-center" id="projects">
           <!-- Card 1: Vectorspace -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="lab-card h-100">
+            <div class="lab-card lab-card-live h-100">
+              <span class="live-badge">
+                <span class="live-dot"></span>
+                LIVE
+              </span>
               <div class="lab-card-image">
                 <img
                   src="/images/viz.png"
@@ -441,7 +381,11 @@
 
           <!-- Card 2: F1 Telemetry -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="lab-card h-100">
+            <div class="lab-card lab-card-live h-100">
+              <span class="live-badge">
+                <span class="live-dot"></span>
+                LIVE
+              </span>
               <div class="lab-card-image">
                 <img
                   src="/images/racecar.png"
@@ -609,217 +553,6 @@
       </div>
     </section>
 
-    <!-- <section id="projects" class="py-5">
-      <div class="container">
-        <h3 class="text-center">Projects</h3>
-        <div class="row justify-content-center px-3 px-md-5">
-          <div class="col-sm-8 co-md-8 col-lg-4 col-md-6 my-3">
-            <div class="card my-3 h-100" title="F1 Plots">
-              <div class="card-head">
-                <a href="https://f1.linux-box.cc"
-                  ><img class="card-img-top" src="/images/racecar.png" alt="F1 Plots"
-                /></a>
-              </div>
-              <div class="card-body bg-transparent p-3">
-                <div class="pb-2 bg-transparent">
-                  <span class="badge badge-secondary">Docker</span>
-                  <span class="badge badge-secondary">AWS</span>
-                  <span class="badge badge-secondary">Matplotlib</span>
-                </div>
-                <h5 class="card-title bg-transparent mt-1">F1 Plots</h5>
-                <div class="card-text bg-transparent secondary-font">
-                  Visualize Formula 1 race data through various interactive plots
-                  utilizing the FastF1 API
-                </div>
-              </div>
-              <div class="card-footer py-3">
-                <span class="m-1 mx-2">
-                  <a
-                    href="https://github.com/SirWilliamIII/formula-one-plots"
-                    target="_blank"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                </span>
-                <span class="float-end">
-                  <a class="btn btn-sm" href="https://f1.linux-box.cc" target="_blank"
-                    >Demo</a
-                  >
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-8 co-md-8 col-lg-4 col-md-6 my-3">
-            <div class="card my-3 h-100" title="Vectorspace">
-              <div class="card-head">
-                <a href="https://vectorspace.linux-box.cc"
-                  ><img
-                    class="card-img-top"
-                    src="/images/viz.png"
-                    alt="vector visualization"
-                /></a>
-              </div>
-              <div class="card-body bg-transparent p-3">
-                <div class="pb-2 bg-transparent">
-                  <span class="badge badge-secondary">Vector Embedding</span>
-                  <span class="badge badge-secondary">Three.js</span>
-                  <span class="badge badge-secondary">Transformer</span>
-                </div>
-                <h5 class="card-title bg-transparent mt-1">Vectorspace</h5>
-                <div class="card-text bg-transparent secondary-font">
-                  Interactive tool visualizes text-embedding vectors in a 3D space,
-                  allowing you to explore their semantic relationships using cosine
-                  similarity, dot product, and Euclidean distance as you add new data.
-                </div>
-              </div>
-              <div class="card-footer py-3">
-                <span class="m-1 mx-2">
-                  <a
-                    href="https://github.com/SirWilliamIII/vector-vizualizer"
-                    target="_blank"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                </span>
-                <span class="float-end">
-                  <a
-                    class="btn btn-sm"
-                    href="https://vectorspace.linux-box.cc"
-                    target="_blank"
-                    >Demo</a
-                  >
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-8 co-md-8 col-lg-4 col-md-6 my-3">
-            <div class="card my-3 h-100" title="PyChain">
-              <div class="card-head">
-                <a href="https://blockchain-python-7dc846119fb1.herokuapp.com"
-                  ><img class="card-img-top" src="/images/pychain.png" alt="pychain"
-                /></a>
-              </div>
-              <div class="card-body bg-transparent p-3">
-                <div class="pb-2 bg-transparent">
-                  <span class="badge badge-secondary">Distributed Ledger</span>
-                  <span class="badge badge-secondary">Python</span>
-                  <span class="badge badge-secondary">Hash Chaining</span>
-                </div>
-                <h5 class="card-title bg-transparent mt-1">PyChain</h5>
-                <div class="card-text bg-transparent secondary-font">
-                  Blockchain implementation that demonstrates the core concepts of
-                  blockchain technology (consensus PoW, mining, immutability)
-                </div>
-              </div>
-              <div class="card-footer py-3">
-                <span class="m-1 mx-2">
-                  <a
-                    href="https://github.com/SirWilliamIII/python-blockchain"
-                    target="_blank"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                </span>
-                <span class="float-end">
-                  <a
-                    class="btn btn-sm"
-                    href="https://blockchain-python-7dc846119fb1.herokuapp.com"
-                    target="_blank"
-                    >Demo</a
-                  >
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-8 co-md-8 col-lg-4 col-md-6 my-3">
-            <div class="card my-3 h-100" title="F1 Driver Odds">
-              <div class="card-head">
-                <a href="https://f1-odds.linux-box.cc"
-                  ><img class="card-img-top" src="/images/dice.svg" alt="f1-odds"
-                /></a>
-              </div>
-              <div class="card-body bg-transparent p-3">
-                <div class="pb-2 bg-transparent">
-                  <span class="badge badge-secondary">Monte Carlo</span>
-                  <span class="badge badge-secondary">Plotly</span>
-                  <span class="badge badge-secondary">Pandas/Numpy</span>
-                </div>
-                <h5 class="card-title bg-transparent mt-1">F1 Driver Odds</h5>
-                <div class="card-text bg-transparent secondary-font">
-                  Predicts each driver's odds to win the Formula 1 world driver's
-                  championship. Odds are updated after each grand prix showing the
-                  driver leaderboard, live standings, and race-by-race progression with
-                  Monte Carlo simulations used to calculate the probability of each
-                  driver's chance of winning the championship.
-                </div>
-              </div>
-              <div class="card-footer py-3">
-                <span class="m-1 mx-2">
-                  <a
-                    href="https://github.com/SirWilliamIII/f1-driver-championship-odds"
-                    target="_blank"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                </span>
-                <span class="float-end">
-                  <a
-                    class="btn btn-sm"
-                    href="https://f1-odds.linux-box.cc"
-                    target="_blank"
-                    >Demo</a
-                  >
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-8 co-md-8 col-lg-4 col-md-6 my-3">
-            <div class="card my-3 h-100" title="Secrets Locker">
-              <div class="card-head">
-                <a href="https://secrets-locker-9b84a42af80f.herokuapp.com/"
-                  ><img
-                    class="card-img-top"
-                    src="/images/locker.png"
-                    alt="secrets-locker"
-                /></a>
-              </div>
-              <div class="card-body bg-transparent p-3">
-                <div class="pb-2 bg-transparent">
-                  <span class="badge badge-secondary">AWS KMS</span>
-                  <span class="badge badge-secondary">Secure Key Storage</span>
-                  <span class="badge badge-secondary">Python</span>
-                </div>
-                <h5 class="card-title bg-transparent mt-1">Secrets Locker</h5>
-                <div class="card-text bg-transparent secondary-font">
-                  The app securely encrypts and decrypts sensitive data using AWS Key
-                  Management Service (KMS) for key management and AES-GCM for
-                  encryption.
-                </div>
-              </div>
-              <div class="card-footer py-3">
-                <span class="m-1 mx-2">
-                  <a
-                    href="https://github.com/SirWilliamIII/secrets-locker"
-                    target="_blank"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                </span>
-                <span class="float-end">
-                  <a
-                    class="btn btn-sm"
-                    href="https://secrets-locker-9b84a42af80f.herokuapp.com/"
-                    target="_blank"
-                    >Demo</a
-                  >
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <footer class="footer-main">
       <div class="container py-4">
