@@ -47,11 +47,13 @@ header .nav-link {
 
 .navbar-logo {
   height: 40px;
-  width: 40px;
-  display: inline-block;
+  width: auto;
   vertical-align: middle;
-  color: var(--text-color);
-  fill: var(--text-color);
+}
+
+/* Invert logo colors in dark mode to make black SVG appear white */
+body.dark .navbar-logo {
+  filter: brightness(0) invert(1);
 }
 
 /* Logo inside navbar-nav styling */
