@@ -48,13 +48,8 @@ header .nav-link {
 .navbar-logo {
   height: 40px;
   width: auto;
-  transition: filter 0.3s ease;
   vertical-align: middle;
-}
-
-/* Invert logo colors in dark mode */
-body.dark .navbar-logo {
-  filter: invert(1);
+  color: var(--text-color);
 }
 
 /* Logo inside navbar-nav styling */
