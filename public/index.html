@@ -56,6 +56,19 @@
       body.dark .navbar-logo {
         filter: brightness(0) invert(1) brightness(2) !important;
       }
+      /* Critical navigation layout */
+      @media (min-width: 992px) {
+        .navbar-nav {
+          display: flex !important;
+          align-items: center !important;
+        }
+        .navbar-nav .nav-item:first-child {
+          margin-right: auto !important;
+        }
+        .navbar-nav .nav-item:not(:first-child) {
+          margin-left: 1rem !important;
+        }
+      }
     </style>
     <title>Will Carpenter</title>
   </head>
