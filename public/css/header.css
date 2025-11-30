@@ -47,7 +47,10 @@ header .nav-link {
 
 .navbar-logo {
   height: 40px;
-  width: auto;
+  width: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
   vertical-align: middle;
 }
 
