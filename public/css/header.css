@@ -46,17 +46,18 @@ header .nav-link {
 }
 
 .navbar-logo {
-  height: 40px;
-  width: 40px;
-  max-width: 40px;
-  max-height: 40px;
+  height: 40px !important;
+  width: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
   object-fit: contain;
   vertical-align: middle;
+  display: inline-block !important;
 }
 
 /* Invert logo colors in dark mode to make black SVG appear white */
 body.dark .navbar-logo {
-  filter: brightness(0) invert(1) brightness(2);
+  filter: brightness(0) invert(1) brightness(2) !important;
 }
 
 /* Logo inside navbar-nav styling */
