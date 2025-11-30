@@ -47,9 +47,11 @@ header .nav-link {
 
 .navbar-logo {
   height: 40px;
-  width: auto;
+  width: 40px;
+  display: inline-block;
   vertical-align: middle;
   color: var(--text-color);
+  fill: var(--text-color);
 }
 
 /* Logo inside navbar-nav styling */
