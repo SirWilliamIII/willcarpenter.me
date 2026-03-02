@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
 #search-content::-webkit-scrollbar {
   width: 0.5em;
   height: 0.1em;
-  background-.lab-card-cta .btncolor: var(--background-color);
+  background-color: var(--background-color);
 }
 
 #about .aboutImg {

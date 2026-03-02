@@ -170,14 +170,16 @@ header .navbar.animate {
 }
 
 .btn-primary-hero {
-  background-color: transparent;
-  color: var(--text-color) !important;
-  border: 2px solid var(--text-secondary-color) !important;
+  background-color: #3b82f6;
+  color: #ffffff !important;
+  border: 2px solid #3b82f6 !important;
 }
 
 .btn-primary-hero:hover {
-  border-color: var(--text-color);
+  background-color: #2563eb;
+  border-color: #2563eb !important;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
 }
 
 .btn-secondary-hero {
@@ -187,7 +189,7 @@ header .navbar.animate {
 }
 
 .btn-secondary-hero:hover {
-  border-color: var(--text-color);
+  border-color: var(--text-color) !important;
   transform: translateY(-2px);
 }
 
@@ -604,125 +606,6 @@ header .navbar.animate {
   color: var(--text-secondary-color) !important;
 }
 
-#experience * {
-  background-color: transparent !important;
-}
-
-#experience .tab-pane > * {
-  opacity: 0.9;
-}
-
-#experience .tab-pane small {
-  opacity: 0.8;
-}
-
-#experience .tab-pane ul {
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-#experience .experience-container .tab-content > .tab-pane p {
-  padding: 1% 0;
-  margin: 0;
-}
-
-#experience .experience-container {
-  background-color: var(--secondary-color) !important;
-  border-radius: 0.75rem;
-  box-shadow: 0px 8px 56px rgb(15 80 100 / 16%);
-}
-
-#experience .nav-item .nav-link {
-  color: var(--text-color) !important;
-  border-bottom: 2px solid transparent;
-  border-radius: 0%;
-  transition: none;
-  cursor: pointer;
-}
-
-#experience .nav-item .nav-link.active {
-  color: var(--text-color) !important;
-  border-bottom: 2px solid var(--primary-color);
-  opacity: 0.8;
-}
-
-#experience .nav-item .nav-link.active:hover {
-  transition: none !important;
-}
-
-#experience .nav-item .nav-link:hover {
-  border-bottom: 2px solid var(--primary-color);
-  opacity: 0.8;
-}
-
-#experience a {
-  opacity: 0.9;
-  display: inline-block;
-  text-decoration: none;
-  color: var(--text-link-color) !important;
-}
-
-#experience a::after {
-  content: '';
-  display: block;
-  width: 0px;
-  height: 2px;
-  bottom: 0.37em;
-  background-color: var(--primary-color);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 0.5;
-}
-
-#experience a:hover::after,
-#experience a:focus::after,
-#experience a:active::after {
-  width: 100%;
-}
-
-#experience .experience-container .tab-content .tab-pane ul {
-  overflow: hidden;
-  list-style: none;
-  margin-bottom: 0;
-}
-
-#experience .experience-container .tab-content .tab-pane ul li {
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 20px;
-}
-
-#experience .experience-container .tab-content .tab-pane ul li::before {
-  content: '▹';
-  color: var(--primary-color);
-  position: absolute;
-  left: 0px;
-}
-
-#experience .experience-container .tab-content .tab-pane .featuredLink a::after {
-  display: block;
-  width: auto;
-  height: auto;
-  bottom: 0em;
-  background-color: transparent;
-  transition: none;
-  opacity: 1;
-}
-
-#experience .experience-container .tab-content .tab-pane .featuredLink a.btn {
-  border: 1px solid var(--primary-color);
-  border-radius: 0.75rem;
-  transition: none;
-}
-
-#experience .experience-container .tab-content .tab-pane .featuredLink a.btn:focus {
-  box-shadow: none;
-}
-
-#experience .experience-container .tab-content .tab-pane .featuredLink a.btn:hover {
-  color: var(--text-color) !important;
-  opacity: 0.7;
-}
-
 /* Education */
 
 #education .container > h3 {
@@ -1030,7 +913,7 @@ header .navbar.animate {
 
 /* Lab Card Styles */
 .lab-card {
-  background: #ffffff;
+  background: var(--secondary-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   overflow: hidden;
@@ -1039,6 +922,10 @@ header .navbar.animate {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+body.dark .lab-card {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .lab-card:hover {
@@ -1106,6 +993,10 @@ header .navbar.animate {
   height: 200px;
   overflow: hidden;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+body.dark .lab-card-image {
+  background: linear-gradient(135deg, #2a2d31 0%, #1e2124 100%);
 }
 
 .lab-card-image img {
@@ -1205,13 +1096,21 @@ header .navbar.animate {
 
 /* Enterprise Card (Mechanical Integrity - display only) */
 .lab-card-enterprise {
-  background: linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%);
+  background: var(--secondary-color);
   border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+body.dark .lab-card-enterprise {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .lab-card-enterprise:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.dark .lab-card-enterprise:hover {
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .lab-card-icon {
@@ -1222,6 +1121,10 @@ header .navbar.animate {
   justify-content: center;
   background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
   color: var(--text-secondary-color);
+}
+
+body.dark .lab-card-icon {
+  background: linear-gradient(135deg, #2a2d31 0%, #1e2124 100%);
 }
 
 .lab-card-note {
