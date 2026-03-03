@@ -13,8 +13,8 @@ https://www.willcarpenter.me/* https://willcarpenter.me/:splat 301
 
 # Legacy URL support (if you had old URLs)
 
-# /blog/\* /#blog 301
+# /blog/* /#blog 301
 
 # 404 fallback - ensure custom 404 page is served
 
-/\* /404.html 404
+/* /404.html 404
