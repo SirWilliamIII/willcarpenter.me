@@ -1,0 +1,85 @@
+# Redirect www -> apex
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.willcarpenter.me;
+    return 301 https://willcarpenter.me$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name willcarpenter.me;
+
+    # Change this to wherever you clone the repo on your VPS
+    root /var/www/willcarpenter.me/public;
+    index index.html;
+
+    # ── Security headers ──────────────────────────────────
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # ── Gzip ──────────────────────────────────────────────
+    gzip on;
+    gzip_types text/plain text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 256;
+
+    # ── Custom 404 ────────────────────────────────────────
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    # ── Shortlink redirects ───────────────────────────────
+    location = /github    { return 302 https://github.com/SirWilliamIII; }
+    location = /linkedin  { return 302 https://linkedin.com/in/will-carpenter; }
+    location = /about     { return 302 /#about; }
+    location = /projects  { return 302 /#lab-highlights; }
+    location = /labs      { return 302 /#lab-highlights; }
+    location = /experience { return 302 /#experience; }
+
+    # ── Cache: immutable vendor assets (1 year) ───────────
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    location /bootstrap-5/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    location /fontawesome-6/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # ── Cache: site CSS/JS (1 day) ────────────────────────
+    location /css/ {
+        expires 1d;
+        add_header Cache-Control "public";
+    }
+    location /js/ {
+        expires 1d;
+        add_header Cache-Control "public";
+    }
+
+    # ── Cache: images (1 week) ────────────────────────────
+    location /images/ {
+        expires 7d;
+        add_header Cache-Control "public";
+    }
+
+    # ── Cache: PDFs (1 hour) ──────────────────────────────
+    location ~* \.pdf$ {
+        expires 1h;
+        add_header Cache-Control "public";
+    }
+
+    # ── Default: try files then 404 ──────────────────────
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

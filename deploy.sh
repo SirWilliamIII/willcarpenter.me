@@ -1,10 +1,13 @@
 #!/bin/bash
-# Deployment Script for Cloudflare Pages
-# Optimizes and deploys willcarpenter.me
+# Deployment Script for willcarpenter.me
+# Pushes to GitHub, then pulls on Oracle VPS via SSH
 
 set -e
 
-echo "🚀 Starting deployment process..."
+VPS_HOST="oracle"
+REPO_DIR="/var/www/willcarpenter.me"
+
+echo "Starting deployment..."
 echo ""
 
 # Step 1: Optimize images (optional, can be skipped with --skip-optimize)
@@ -13,19 +16,18 @@ if [[ "$1" != "--skip-optimize" ]]; then
     if command -v magick &> /dev/null || command -v convert &> /dev/null; then
         ./optimize-images.sh
     else
-        echo "⚠️  ImageMagick not installed. Skipping image optimization."
-        echo "   Install with: brew install imagemagick"
+        echo "ImageMagick not installed. Skipping image optimization."
     fi
     echo ""
 else
-    echo "⏭️  Skipping image optimization (--skip-optimize flag set)"
+    echo "Skipping image optimization (--skip-optimize flag set)"
     echo ""
 fi
 
 # Step 2: Check git status
 echo "Step 2: Checking git status..."
 if [[ -n $(git status -s) ]]; then
-    echo "📝 Uncommitted changes detected:"
+    echo "Uncommitted changes detected:"
     git status -s
     echo ""
     read -p "Commit these changes? (y/N) " -n 1 -r
@@ -36,10 +38,10 @@ if [[ -n $(git status -s) ]]; then
         git add .
         git commit -m "$commit_message"
     else
-        echo "⚠️  Warning: Deploying with uncommitted local changes"
+        echo "Warning: Deploying with uncommitted local changes"
     fi
 else
-    echo "✓ Working tree clean"
+    echo "Working tree clean"
 fi
 echo ""
 
@@ -48,24 +50,13 @@ echo "Step 3: Pushing to GitHub..."
 current_branch=$(git branch --show-current)
 echo "Pushing branch: $current_branch"
 git push origin "$current_branch"
-echo "✓ Pushed to GitHub"
+echo "Pushed to GitHub"
 echo ""
 
-# Step 4: Wait for Cloudflare Pages deployment
-echo "Step 4: Cloudflare Pages deployment"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+# Step 4: Pull on VPS
+echo "Step 4: Deploying to VPS..."
+ssh "$VPS_HOST" "cd $REPO_DIR && git pull origin $current_branch"
+echo "Deployed to VPS"
 echo ""
-echo "🌐 Your site will deploy automatically via Cloudflare Pages"
-echo ""
-echo "📍 Check deployment status:"
-echo "   https://dash.cloudflare.com/pages"
-echo ""
-echo "🔗 Production URL:"
-echo "   https://willcarpenter.me"
-echo ""
-echo "💡 Tips:"
-echo "   • CF Pages typically deploys in 1-2 minutes"
-echo "   • Check the dashboard for build logs if issues occur"
-echo "   • Hard refresh (Ctrl+Shift+R) to bypass browser cache"
-echo ""
-echo "✅ Deployment initiated successfully!"
+
+echo "Done! Site live at https://willcarpenter.me"
